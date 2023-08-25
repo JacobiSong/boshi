@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SearchPic</title>
+    <link rel="stylesheet" href="/Users/hanc/codes/searchPic/Pages/index.js">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="./index.js"></script>
+</head>
+
+<body onload="get_data()">
+
+    <ul class="layui-nav" lay-filter="" style="background-color:#275F7E">
+        <li class="layui-nav-item"><a href="">图片检索</a></li>
+    </ul>
+
+    <div class="layui-fluid">
+        <div style="height: 30%" >
+            <div class="search">
+                <div class="empty-block" style="height: 40%; "></div>
+                <div class="search-block">
+                    <div class="layui-row" style="height: 100%">
+                        <div class="layui-col-md3" style="height: 100%;">
+                            <div class="grid-demo grid-demo-bg1"></div>
+                        </div>
+                        <div class="layui-col-md5" style="height: 100%">
+                            <div class="layui-input-block" style="height: 100%">
+                                <input type="text" id="input-block" name="" placeholder="请输入查询内容" autocomplete="off" class="layui-input query-input" style="height: 100%">
+                            </div>
+                        </div>
+
+
+
+                        <div class="layui-col-md2" style="height: 100%">
+                            <button type="button" class="layui-btn search-btn" onclick="search_button_onClick()" style="height: 100%;background-color: #275F7E">
+                                搜索
+                            </button>
+                        </div>
+                        <div class="layui-col-md1" style="height: 100%"></div>
+                        <div class="layui-col-md2">
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="empty-block" style="height: calc(30%); "></div>
+            </div>
+            <div class="similar-question-block" id="similar_question_block">
+                <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+                    <legend>相似问题</legend>
+                </fieldset>
+
+                <table class="layui-table" lay-even="" lay-skin="nob" id="similar_question_table" style="height: 10%">
+                    <colgroup>
+                        <col>
+                    </colgroup>
+                    <tbody id="tbody">
+                        <tr>
+                            <td>问题1</td>
+                        </tr>
+                        <tr>
+                            <td>问题1</td>
+                        </tr>
+                        <tr>
+                            <td>问题1</td>
+                        </tr>
+                        <tr>
+                            <td>问题1</td>
+                        </tr>
+                        <tr>
+                            <td>问题1</td>
+                        </tr>
+                        <tr>
+                            <td>问题1</td>
+                        </tr>
+                        <tr>
+                            <td>问题1</td>
+                        </tr>
+                        <tr>
+                            <td>问题1</td>
+                        </tr>
+                        <tr>
+                            <td>问题1</td>
+                        </tr>
+                        <tr>
+                            <td>问题1</td>
+                        </tr>
+                        <tr>
+                            <td>问题1</td>
+                        </tr>
+                        <tr>
+                            <td>问题1</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <button type="button" class="layui-btn search-btn" onclick="refresh_button_onClick()" style="height: 10%; horiz-align:center;vertical-align:center;display:block;margin:0 auto;text-align:center; background-color: #275F7E">
+                    刷新
+                </button>
+            </div>
+
+        </div>
+
+        <div class="result" id="resultBlock">
+
+
+            <div style="height: 50%" id="oneAnswerBlock">
+                <div class="pic-area" id="picArea">
+                    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+                        <legend>图片结果</legend>
+                    </fieldset>
+                    <div class="empty-status">
+                        <img src="/resource/img/tabpage.png" id="answer_pic_content">
+                        <div class="text">请先输入查询</div>
+                    </div>
+                </div>
+                <div class="text-area" id="textArea">
+                    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+                        <legend>文本结果</legend>
+                    </fieldset>
+                    <textarea name="desc" placeholder="请先输入查询" class="layui-textarea" rows="3" id="answer_text_content" disabled style="padding: 20px;height: 70%"></textarea>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <title>客服系统</title>
+
+    <link rel="stylesheet" href="http://boshitech.net/service/public/layui/css/layui.css">
+
+    <style>
+
+        html, body {
+            height: 100%;
+        }
+
+        .layui-fluid {
+            /*height: calc(100% - 110px);*/
+            height: calc(100% - 60px);
+            padding: 0;
+        }
+
+        .layui-layout-admin .footer-demo {
+            position: static;
+            height: auto;
+            line-height: 30px;
+        }
+
+        .layui-layout-admin .footer-demo {
+            height: 50px;
+            padding: 5px 0;
+        }
+
+        .layui-layout-admin .layui-footer {
+            position: fixed;
+            left: 200px;
+            right: 0;
+            bottom: 0;
+            height: 44px;
+            line-height: 44px;
+            padding: 0 15px;
+            background-color: #eee;
+        }
+
+        .footer {
+            position: fixed;
+            z-index: 9999;
+            bottom: 0;
+            padding: 10px 0;
+            line-height: 30px;
+            text-align: center;
+            color: #666;
+            font-weight: 300;
+            width: 100%;
+            border-top: 1px solid #e9e9e9;
+        }
+
+        .layui-foot-main {
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body onload="get_data()">
+<ul class="layui-nav" lay-filter="nav-admin">
+    <li class="layui-nav-item admin-index"><a>博实客服系统</a></li>
+</ul>
+<link rel="stylesheet" href="http://boshitech.net/service/public/css/server.css">
+<div class="layui-fluid">
+    <div class="friend">
+        <div class="friend-head">
+            <span class="help-my-chat">我的对话<span id="keleyivisitorip" style="display: none;"></span></span>
+        </div>
+
+        <!--  对话框的具体内容，如果需要添加新的对话就往这个 chat-user 里边直接添加 li 或者 ul          -->
+
+        <div class="chat-user">
+
+        </div>
+
+    </div>
+    <div class="devider"></div>
+    <div class="chat">
+        <div class="message-container" id="message-container" >
+            <div class="empty-status">
+                <img src="http://boshitech.net/service/resources/img/tabpage.png">
+                <div class="text">从左侧列表打开对话</div>
+            </div>
+        </div>
+
+
+        <div class="message-sender">
+            <div class="sender-editor">
+                <!--    输入消息的部分        -->
+                <textarea placeholder="请输入消息内容" id="msg-send-textarea"></textarea>
+
+                <div class="layui-btn layui-btn-normal btnMsgSend " onclick="send_new_msg()">发送</div>
+            </div>
+        </div>
+    </div>
+    <div class="devider"></div>
+    <div class="info">
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+            <legend>详细信息</legend>
+        </fieldset>
+        <form class="layui-form" action="">
+
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">问题内容</label>
+                <div class="layui-input-block">
+                    <textarea name="desc" placeholder="请先选择对话" class="layui-textarea" rows="3" id="question_content" disabled></textarea>
+                </div>
+            </div>
+            <hr class="layui-border-cyan">
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">问题类别</label>
+                <div class="layui-input-block">
+                    <input name="desc" placeholder="请先选择对话" class="layui-input" rows="3" id="question_type" disabled></input>
+                </div>
+            </div>
+            <hr class="layui-border-cyan">
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">相关内容</label>
+                <div class="layui-input-block" id="answer1_block" onclick="choose_an_answer(this.id)">
+                    <textarea name="desc" placeholder="请先选择对话" class="layui-textarea" rows="6" id="related_answer1" disabled ></textarea>
+                </div>
+                <hr class="layui-border-cyan">
+                <div class="layui-input-block" id="answer2_block" onclick="choose_an_answer(this.id)">
+                    <textarea name="desc" placeholder="" class="layui-textarea" rows="6" id="related_answer2" disabled></textarea>
+                </div>
+                <hr class="layui-border-cyan">
+                <div class="layui-input-block" id="answer3_block" onclick="choose_an_answer(this.id)">
+                    <textarea name="desc" placeholder="" class="layui-textarea" rows="6" id="related_answer3" disabled ></textarea>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+
+</div>
+
+<script src="http://boshitech.net/service/public/layui/layui.js"></script>
+
+<script src="index.js"></script>
+
+<body>
+

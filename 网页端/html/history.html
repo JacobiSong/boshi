@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>博时客服系统</title>
+    <style>
+        body{ margin:0; height:100%}
+        html{ height:100%}
+    </style>
+</head>
+	<h2>用户历史记录</h2>
+	
+	<ul>
+		<div>
+			<label style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px;  font-weight:bold; width:35%"> &emsp;&emsp;&emsp;&emsp; 用户问题 </label>
+			<label style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px;  font-weight:bold; width:30%"> &emsp;&emsp;&emsp;&emsp; 相应答案 </label>
+			<label style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px;  font-weight:bold; width:15% ">&emsp;&emsp;&emsp;&emsp; 问题频数</label>
+		</div>
+		
+		<hr>
+		<li>
+		<div>
+			<input type = 'text' id="field1_1" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field1_2" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field1_3" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:10%; " /> 
+			<input type = 'button' id="ok1_1" style="margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value="" onclick="showDetail(this.id)"/>
+			<input type = 'button' id="send1_1" style="margin-left:1%; margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value="" onclick="inCorpus(this.id)"/>
+		</div>
+		</li>
+		<hr>
+		<li>
+		<div>
+			<input type = 'text' id="field2_1" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field2_2" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field2_3" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:10%; " /> 
+			<input type = 'button' id="ok2_1" style="margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value="" onclick="showDetail(this.id)"/>
+			<input type = 'button' id="send2_1" style="margin-left:1%; margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value="" onclick="inCorpus(this.id)"/>
+		</div>
+		</li>
+		<hr>
+		<li>
+		<div>
+			<input type = 'text' id="field3_1" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field3_2" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field3_3" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:10%; " /> 
+			<input type = 'button' id="ok3_1" style="margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value="" onclick="showDetail(this.id)"/>
+			<input type = 'button' id="send3_1" style="margin-left:1%; margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value="" onclick="inCorpus(this.id)"/>
+		</div>
+		</li>
+		<hr>
+		<li>
+		<div>
+			<input type = 'text' id="field4_1" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field4_2" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field4_3" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:10%; " /> 
+			<input type = 'button' id="ok4_1" style="margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value=" " onclick="showDetail(this.id)"/>
+			<input type = 'button' id="send4_1" style="margin-left:1%; margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value="" onclick="inCorpus(this.id)"/>
+		</div>
+		</li>
+		<hr>
+		<li>
+		<div>
+			<input type = 'text' id="field5_1" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field5_2" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field5_3" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:10%; " /> 
+			<input type = 'button' id="ok5_1" style="margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value=" " onclick="showDetail(this.id)"/>
+			<input type = 'button' id="send5_1" style="margin-left:1%; margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value="" onclick="inCorpus(this.id)"/>
+		</div>
+		</li>
+		<hr>
+		<li>
+		<div>
+			<input type = 'text' id="field6_1" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field6_2" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field6_3" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:10%; " /> 
+			<input type = 'button' id="ok6_1" style="margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value=" " onclick="showDetail(this.id)"/>
+			<input type = 'button' id="send6_1" style="margin-left:1%; margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value="" onclick="inCorpus(this.id)"/>
+		</div>
+		</li>
+		<hr>
+		<li>
+		<div>
+			<input type = 'text' id="field7_1" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field7_2" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field7_3" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:10%; " /> 
+			<input type = 'button' id="ok7_1" style="margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value=" " onclick="showDetail(this.id)"/>
+			<input type = 'button' id="send7_1" style="margin-left:1%; margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value="" onclick="inCorpus(this.id)"/>
+		</div>
+		</li>
+		<hr>
+		<li>
+		<div>
+			<input type = 'text' id="field8_1" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field8_2" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field8_3" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:10%; " /> 
+			<input type = 'button' id="ok8_1" style="margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value=" " onclick="showDetail(this.id)"/>
+			<input type = 'button' id="send8_1" style="margin-left:1%; margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value="" onclick="inCorpus(this.id)"/>
+		</div>
+		</li>
+		<hr>
+		<li>
+		<div>
+			<input type = 'text' id="field9_1" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field9_2" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field9_3" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:10%; " /> 
+			<input type = 'button' id="ok9_1" style="margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value=" " onclick="showDetail(this.id)"/>
+			<input type = 'button' id="send9_1" style="margin-left:1%; margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value="" onclick="inCorpus(this.id)"/>
+		</div>
+		</li>
+		<hr>
+		<li>
+		<div>
+			<input type = 'text' id="field10_1" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field10_2" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:35%; " /> 
+			<input type = 'text' id="field10_3" disabled="true" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:10%; " /> 
+			<input type = 'button' id="ok10_1" style="margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value=" " onclick="showDetail(this.id)"/>
+			<input type = 'button' id="send10_1" style="margin-left:1%; margin-top: 2px; background-color: rgba(180, 205, 205,0); border: none; color: black;
+				text-align: left; text-decoration: none; display: inline-block;font-size: 14px; width:6%; font-size: 14px;  font-weight:bold;" value="" onclick="inCorpus(this.id)"/>
+		</div>
+		</li>
+		<hr>
+	</ul>
+	<div>
+		<input type = 'button' id="get" style="margin-left:30%; margin-top: 20px; background : rgba(180, 205, 205,0.7); border: none; color: black; height:30px;
+				text-align: center; text-decoration: none; display: inline-block;font-size: 14px; width:10%; font-size: 14px; font-weight:bold;" value="数据获取" onclick="getData()"/>
+		<input type = 'button' id="get" style="margin-left:5%; margin-top: 20px; background-color: rgba(180, 205, 205,0.7); border: none; color: black; height:30px;
+				text-align: center; text-decoration: none; display: inline-block;font-size: 14px; width:10%; font-size: 14px; font-weight:bold;" value="上一页" onclick="prevPage()"/>
+		<input type = 'button' id="get" style="margin-left:5%; margin-top: 20px; background-color: rgba(180, 205, 205,0.7); border: none; color: black; height:30px;
+				text-align: center; text-decoration: none; display: inline-block;font-size: 14px; width:10%; font-size: 14px; font-weight:bold;" value="下一页" onclick="nextPage()"/>
+	</div>
+	
+<script type="text/javascript">
+var data = [];
+var current = 0;
+var received_msg;
+var max_entry = 10;
+var showLog = true
+function getData(){
+	data = []
+    WebSocketTest({}, "get-question-history")
+	if(showLog){
+		console.log(received_msg)
+		var obj = JSON.parse(received_msg);
+		console.log(obj)
+	}
+    current = 0;
+};
+
+function prevPage(){
+    if(current == 0){
+        alert('当前是第一页')
+    }else{
+        current = current - max_entry;
+        for(var i=0; i<max_entry; i++){
+            var id1 = 'field' + (i+1) + '_1'
+            document.getElementById(id1).value = "    " + data[current+i]['question']
+			var id2 = 'field' + (i+1) + '_2'
+            document.getElementById(id2).value = "    " + data[current+i]['answer']
+			var id3 = 'field' + (i+1) + '_3'
+            document.getElementById(id3).value = "    " +  data[current+i]['count']
+			var id4 = 'ok' + (i+1) + '_1'
+			document.getElementById(id4).value = '查看详情'
+			document.getElementById(id4).style.background = "rgba(180, 205, 205,0.7)"
+			var id5 = 'send' + (i+1) + '_1'
+			document.getElementById(id5).value = '入库'
+			document.getElementById(id5).style.background = "rgba(180, 205, 205,0.7)"
+        }
+    }
+};
+
+function nextPage(){
+    current += max_entry
+    if(current + 1 > data.length){
+        alert('当前是最后一页')
+		current -= max_entry
+    }else{
+        var left = data.length - current
+        var length = left < max_entry ? left : max_entry
+        for(var i=length; i<max_entry; i++){
+            var id1 = 'field' + (i+1) + '_1'
+            document.getElementById(id1).value = ''
+			var id2 = 'field' + (i+1) + '_2'
+            document.getElementById(id2).value = ''
+			var id3 = 'field' + (i+1) + '_3'
+            document.getElementById(id3).value = ''
+			var id4 = 'ok' + (i+1) + '_1'
+			document.getElementById(id4).value = ' '
+			document.getElementById(id4).style.background  = "rgba(180, 205, 205,0)"
+			var id5 = 'send' + (i+1) + '_1'
+			document.getElementById(id5).value = ''
+			document.getElementById(id5).style.background = "rgba(180, 205, 205,0)"
+        }
+        for(var i=0; i<length; i++){
+            var id1 = 'field' + (i+1) + '_1'
+            document.getElementById(id1).value = "    " +  data[current+i]['question']
+			var id2 = 'field' + (i+1) + '_2'
+            document.getElementById(id2).value = "    " +  data[current+i]['answer']
+			var id3 = 'field' + (i+1) + '_3'
+            document.getElementById(id3).value = "    " +  data[current+i]['count']
+			var id4 = 'ok' + (i+1) + '_1'
+			document.getElementById(id4).value = '查看详情'
+			document.getElementById(id4).style.background = "rgba(180, 205, 205,0.7)"
+			var id5 = 'send' + (i+1) + '_1'
+			document.getElementById(id5).value = '入库'
+			document.getElementById(id5).style.background = "rgba(180, 205, 205,0.7)"
+        }
+    }
+};
+
+function WebSocketTest(response, type){
+    if ("WebSocket" in window){
+        var ws = new WebSocket("wss://boshitech.net:8001"); 
+        var myDate = new Date() 
+		if(showLog){
+			console.log('start to get data')
+			console.log(myDate.getTime())
+		}
+		end = myDate.getTime()		
+        ws.onopen = function(){
+            response['type'] = type;
+            ws.send(JSON.stringify(response));
+			if(showLog){
+				console.log('start to connect')
+			}
+        };    
+        ws.onmessage = function (evt) { 
+		    data = []
+            received_msg = evt.data;
+			if(showLog){
+				end = myDate.getTime()	
+				console.log('get data')			
+				console.log(end)
+			}
+			var obj = JSON.parse(received_msg);
+			if (obj != null){
+				for(var va in obj){
+					data.push({'question': va, 'answer': obj[va]['answer'], 'count':obj[va]['count']})
+				}
+				var length = data.length < max_entry ? data.length : max_entry;
+				var i;
+				for(i=0; i<length; i++){
+					var id1 = 'field' + (i+1) + '_1'
+					document.getElementById(id1).value = "    " +  data[current+i]['question']
+					var id2 = 'field' + (i+1) + '_2'
+					document.getElementById(id2).value = "    " +  data[current+i]['answer']
+					var id3 = 'field' + (i+1) + '_3'
+					document.getElementById(id3).value = "    " +  data[current+i]['count']
+					var id4 = 'ok' + (i+1) + '_1'
+					document.getElementById(id4).value = '查看详情'
+					document.getElementById(id4).style.background  = "rgba(180, 205, 205,0.7)"
+					var id5 = 'send' + (i+1) + '_1'
+					document.getElementById(id5).value = '入库'
+					document.getElementById(id5).style.background = "rgba(180, 205, 205,0.7)"
+				}
+				while(i < max_entry){
+					var id1 = 'field' + (i+1) + '_1'
+					document.getElementById(id1).value = ''
+					var id2 = 'field' + (i+1) + '_2'
+					document.getElementById(id2).value = ''
+					var id3 = 'field' + (i+1) + '_3'
+					document.getElementById(id3).value = ''
+					var id4 = 'ok' + (i+1) + '_1'
+					document.getElementById(id4).value = ' '
+					document.getElementById(id4).style.background  = "rgba(180, 205, 205,0)"
+					var id5 = 'send' + (i+1) + '_1'
+					document.getElementById(id5).value = ''
+					document.getElementById(id5).style.background = "rgba(180, 205, 205,0)"
+					i += 1
+				}
+			}
+			current = 0;
+            ws.close()
+        };       
+        ws.onclose = function(){};
+    }
+};
+
+function showDetail(id){
+	index = id.slice(2)[0]
+	var newwindow = window.open(' ','_blank','width=500,height=700,menubar=no,toolbar=no,status=no,scrollbars=yes')
+	var value1 = document.getElementById("field"+index+"_1").value
+	var value2 = document.getElementById("field"+index+"_2").value
+	var value3 = document.getElementById("field"+index+"_3").value
+	var html = '<body style="background:url(1.png)" > <h2>问题</h2>' + ' <textarea disabled="true", style="font-size: 20px; border: none; margin-left:5%; height:30%; width:80%; background:rgba(180, 205, 205,0); font-weight:bold;">' + value1 + '</textarea>'
+				+ '<h2>答案</h2>' + '<textarea disabled="true", style="font-size: 20px; border: none; margin-left:5%; height:30%; width:80%; background:rgba(180, 205, 205,0); font-weight:bold;">' + value2 + '</textarea>'
+				+ '<h2>频数</h2>' + '<textarea type="text" disabled="true", style="font-size: 14px; border: none; margin-left:5%; height:5%; width:10%; background:rgba(180, 205, 205,0); font-weight:bold;">' + value3+ '</textarea></body>'
+	newwindow.document.write(html)
+};
+
+function inCorpus(id){
+	alert('need to implement further')
+}
+</script>
+</html>

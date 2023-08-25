@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>博实客服系统</title>
+    <style>
+        body{ margin:0; height:100%}
+        html{ height:100%}
+
+    </style>
+</head>
+<body onload='getData()'>
+<div class='main'>
+	<div class="left" style='position:absolute; margin-top: 2%; height: 96%; width: 30%'>
+            <div class="title">
+                <strong> 问题列表</strong>
+            </div>
+            <div class="col" style=" margin-top: 10px;">
+                <label class="role"><strong>角色</strong></label>
+                <select id="role" style="" onchange="getData1()">
+                    <option value="无"><strong>无</strong></option>
+                    <option value="自动包装控制系统(单摆臂)"><strong>自动包装控制系统(单摆臂)</strong></option>
+                    <option value="机器人码垛机"><strong>机器人码垛机</strong></option>
+                    <option value="台车式包装机"><strong>台车式包装机</strong></option>
+                    <option value="高位码垛机"><strong>高位码垛机</strong></option>
+                    <option value="低位码垛"><strong>低位码垛</strong></option>
+                    <option value="套膜机"><strong>套膜机</strong></option>
+                    <option value="封口机"><strong>封口机</strong></option>
+                    <option value="输送检测"><strong>输送检测</strong></option>
+                </select>
+            </div>
+            <ul id="analysisContent" >
+            <li>
+            <div class="text-item" >
+            <input type="button" id="field1" style="margin-top:10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis; height:32px; background-color: rgba(255,255,255,0.1); border: none; color: black; text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:100%;" onclick="setContent(this.id)"/>
+            </div>
+            </li>
+            <li>
+            <div class="text-item" >
+            <input type="button" id="field2" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis; margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+            text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:100%; " onclick="setContent(this.id)"/>
+            </div>
+            </li>
+            <li>
+            <div class="text-item" >
+            <input type="button" id="field3" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis; margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+            text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:100%; " onclick="setContent(this.id)"/>
+            </div>
+            </li>
+            <li>
+            <div class="text-item" >
+            <input type="button" id="field4" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis; margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+            text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:100%; " onclick="setContent(this.id)"/>
+            </div>
+            </li>
+            <li>
+            <div class="text-item" >
+            <input type="button" id="field5" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis; margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+            text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:100%; " onclick="setContent(this.id)"/>
+            </div>
+            </li>
+            <li>
+            <div class="text-item" >
+            <input type="button" id="field6" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis; margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+            text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:100%; " onclick="setContent(this.id)"/>
+            </div>
+            </li>
+            <li>
+            <div class="text-item" >
+            <input type="button" id="field7" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis; margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+            text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:100%; " onclick="setContent(this.id)"/>
+            </div>
+            </li>
+			<li>
+            <div class="text-item" >
+            <input type="button" id="field8" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis; margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+            text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:100%; " onclick="setContent(this.id)"/>
+            </div>
+            </li>
+			<li>
+            <div class="text-item" >
+            <input type="button" id="field9" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis; margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+            text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:100%; " onclick="setContent(this.id)"/>
+            </div>
+            </li>
+			<li>
+            <div class="text-item" >
+            <input type="button" id="field10" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis; margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+            text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:100%; " onclick="setContent(this.id)"/>
+            </div>
+            </li>
+			<li>
+            <div class="text-item" >
+            <input type="button" id="field11" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis; margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+            text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:100%; " onclick="setContent(this.id)"/>
+            </div>
+            </li>
+			<li>
+            <div class="text-item" >
+            <input type="button" id="field12" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis; margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+            text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:100%; " onclick="setContent(this.id)"/>
+            </div>
+            </li>
+			<li>
+            <div class="text-item" >
+            <input type="button" id="field13" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis; margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+            text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:100%; " onclick="setContent(this.id)"/>
+            </div>
+            </li>
+			<li>
+            <div class="text-item" >
+            <input type="button" id="field14" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis; margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+            text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:100%; " onclick="setContent(this.id)"/>
+            </div>
+            </li>
+			<li>
+            <div class="text-item" >
+            <input type="button" id="field15" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis; margin-top: 2px; background-color: rgba(255,255,255,0.1); border: none; color: black; height:32px;
+            text-align: left; text-decoration: none; display: inline-block;font-size: 18px; width:100%; " onclick="setContent(this.id)"/>
+            </div>
+            </li>
+            </ul>
+            <div class="button">
+                <input class="btn" type="button" id="field16"  value="上一页" onclick="prevPage()"/>
+                <input class="btn" type="button" id="field17"  value="下一页" onclick="nextPage()"/>
+            </div>  
+</div>
+	<div class="right"style='margin-left:31%; margin-top: 2%;  width: 68%; height:96%'>
+            <h3>问题描述</h3>
+            <textarea  id="question" class='textarea'> </textarea>
+            <h3>问题类别</h3>
+            <textarea  id="label_" class='textarea' > </textarea>
+            <h3>相关答案片段</h3>
+            <textarea class='textarea1' id="related1" wrap="virtual" onclick="setText(this.id)"> </textarea>
+            <textarea class='textarea1' id="related2" wrap="virtual" onclick="setText(this.id)"> </textarea>
+            <textarea class='textarea1' id="related3" wrap="virtual" onclick="setText(this.id)"> </textarea>
+            <h3>答案选择</h3>
+    
+            <textarea id="edit" class='textarea2'> </textarea>
+            <input class="btn" type="button" id="ok" value="回复" onclick="sendAnswer(this.id)"/>
+            <input class="btn" type="button" id="ok1" value="入库" onclick="sendAnswer(this.id)" style="margin-right:50px"/>
+        </div>
+</div>
+</body>
+
+<style type="text/css">
+
+		*{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{ 
+            margin:5px; 
+            height:99%;
+            min-width: 99%;
+            background-color: rgb(243, 243, 243);
+            }
+        html{ height:99%}
+        		
+        .text-item {
+            height:1%;
+            border-bottom: 1px solid #ccc;
+            border-left: 10px;
+			margin-left: 20px;
+            cursor: pointer;
+        }
+        h3{
+            font-weight: 500;
+            font-size: 16px;
+            padding: 0;
+			font-weight:bold;
+            margin: 10px 0;
+        }
+        h3::before{
+            content: '';
+            padding-left: 10px;
+            border-left: 2px solid rgb(17, 145, 231);
+        }
+
+        .textarea{
+            width: 100%;
+            height: 30px;
+            margin: 10px 0;
+            outline: none;
+            border-color: #ccc;
+			border: 1px dashed gray;
+            font-size:14pt;
+			background-color:rgba(255, 255, 255, 0.1); 
+        }
+        
+        .textarea1{
+            width: 100%;
+            height: 80px;
+            margin: 2px 0;
+            outline: none;
+            border-color: #ccc;
+            font-size:12pt;
+			border: 1px dashed gray;
+			background-color:rgba(255, 255, 255, 0.1); 
+        }
+
+        .textarea2{
+            width: 100%;
+            height: 160px;
+            margin: 5px 0;
+            outline: none;
+            border-color: #ccc;
+            font-size:14pt;
+			border: 1px dashed gray;
+			background-color:rgba(255, 255, 255, 0.1); 
+        }
+        .btn{
+            float: right;
+            margin-right: 10px;
+            width: 100px;
+            height: 30px;
+            background: rgb(17, 145, 231);
+            border: none;
+            color: white;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .left .button{
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+        }
+        .left .btn{
+            float: right;
+            margin-right: 0px;
+            width: 100px;
+            height: 30px;
+            background: rgb(17, 145, 231);
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        .btn:hover{
+            background:white;
+            color: rgb(17, 145, 231);
+            border: 1px solid rgb(17, 145, 231);
+        }
+        #analysisContent li:nth-of-type(odd){
+            background-color: rgb(250, 250, 250);
+        }
+        #analysisContent li:nth-of-type(even){
+            background-color: rgb(238, 238, 238);
+        }
+        #analysisContent li:hover{
+            background-color: #ccc;
+            cursor: pointer;
+        }
+        .title{
+              text-align: center;  
+            padding: 10px 0px;
+
+        }
+        .title strong{
+            font-size: 18px;
+            padding-bottom: 5px;
+            border-bottom: 3px solid rgb(17, 145, 231);
+        }
+        .col{
+            height: 40px;
+        }
+        .role::before{
+            content: '';
+            padding-left: 10px;
+            border-left: 2px solid rgb(17, 145, 231);
+        }
+        #role{
+            float: right;
+            font-size: 18px; 
+            background-color: rgba(255, 255, 255, 0.7); 
+            border: none; 
+            color: black; 
+            height:30px; 
+            width:200px;
+            border: 1px solid #ccc;
+        }
+ 
+
+
+</style>
+
+<script type="text/javascript">
+var data = [];
+var current = 0;
+var received_msg;
+var max_entry = 15;
+var clicked_id = -1;
+var is_login = true
+var c=0; function showLogin() { alert(c++); } setInterval("getData()","20000");
+var start = 0
+var last_role = 'role'
+var showLog = true
+var current_index = -1
+function getData1(){
+	clear_content()
+	
+	data = []
+    WebSocketTest({}, "get-question")
+	if(showLog){
+		console.log(received_msg)
+		var obj = JSON.parse(received_msg);
+		console.log(obj)
+	}
+    current = 0;
+}
+
+function getData(){
+        var myDate = new Date() 
+		end = myDate.getTime()
+		var role = document.getElementById('role').value;
+		if (showLog){
+			console.log('end,' + end)
+			console.log('start' + start)
+			console.log('period' + (end-start))
+		}
+		if(role != last_role || (role == last_role && (end - start) > 10000 * 30)){
+			if(showLog) {
+				console.log('try to connect again');
+			}
+			WebSocketTest({}, "get-question")
+			last_role = role
+			start = end
+		}
+};
+
+function prevPage(){
+    if(current == 0){
+        alert('当前是第一页')
+    }else{
+		clear_content()
+        current = current - max_entry;
+        for(var i=0; i<max_entry; i++){
+            var id = 'field' + (i+1)
+            document.getElementById(id).value = data[current+i]['question']
+        }
+    }
+};
+
+function nextPage(){
+    current += max_entry
+    if(current + 1 > data.length){
+        alert('当前是最后一页')
+		current -= max_entry
+    }else{
+	    clear_content()
+        var left = data.length - current
+        var length = left < max_entry ? left : max_entry
+        for(var i=length; i<max_entry; i++){
+            var id = 'field' + (i+1)
+            document.getElementById(id).value = ''
+        }
+        for(var i=0; i<length; i++){
+            var id = 'field' + (i+1)
+            document.getElementById(id).value = data[current+i]['question']
+        }
+    }
+};
+
+function setContent(id){
+    var value = document.getElementById(id).value;
+    if (value != ''){
+        var index = Number(id.slice(5)) - 1
+        console.log(data[index + current])
+        document.getElementById('question').value =  data[index + current]['question']
+        document.getElementById('label_').value = data[index + current]['answer']['label']
+        current_index = index + current
+        var answer = data[index + current]['answer']
+        var i = 0;
+        for(var a in answer['answer']){
+            i += 1
+            var id = 'related' + i
+            document.getElementById(id).value =  answer['answer'][a]
+        }
+        while(i < 3){
+            i += 1;
+            var id = 'related' + i
+            document.getElementById(id).value = '';
+        }
+        i = 0;
+        clicked_id = index
+    }
+};
+
+function setText(id){
+    document.getElementById('edit').value  = document.getElementById(id).value;
+};
+
+function sendAnswer(id){
+    var answer = document.getElementById('edit').value
+    var question = document.getElementById('question').value
+    var label = document.getElementById('label_').value
+    var related_d = []
+    var response = {'question': question, 'answer': answer, 'related_question': related_d, "label":label}
+    // console.log(response)
+    if(question != '' && answer != ''){
+        if(id=='ok')
+            WebSocketTest(response, 'answer-question')
+        else
+            WebSocketTest(response, 'in-corpus')
+    }
+    clear_content()
+    getData1()
+}
+
+function clear_content(){
+    if (current_index != -1){
+		data.splice(current_index, 1)
+		var length = data.length < max_entry ? data.length : max_entry;
+		var i;
+		for(i=0; i<length; i++){
+			var id = 'field' + (i+1)
+			document.getElementById(id).value = data[i]['question']
+		}
+		while(i < max_entry){
+			var id = 'field' + (i+1)
+			document.getElementById(id).value = ""
+			i += 1
+		}
+		current_index = -1
+	}
+    document.getElementById('question').value = ''
+    document.getElementById('edit').value = ''
+    document.getElementById('related1').value = ''
+    document.getElementById('related2').value = ''
+    document.getElementById('related3').value = ''
+    document.getElementById('edit').value = ''
+    document.getElementById('label_').value = ""
+}
+
+function WebSocketTest(response, type){
+    var role = document.getElementById('role').value;
+    var roleIndex = 0;
+    if(role != '无'){
+        roleIndex = role;
+    } 
+    if ("WebSocket" in window){
+        var ws = new WebSocket("wss://boshitech.net:8001"); 
+        var myDate = new Date() 
+		if(showLog){
+			console.log('start to get data')
+			console.log(myDate.getTime())
+		}
+		end = myDate.getTime()		
+        ws.onopen = function(){
+            response['type'] = type;
+            if(type === 'in-corpus'){
+                response['type'] = 'answer-question'
+            }
+            response['role'] = roleIndex;
+            response['action'] = type
+            ws.send(JSON.stringify(response));
+			if(showLog){
+				console.log('start to connect')
+			}
+            };    
+        ws.onmessage = function (evt) { 
+		    data = []
+            received_msg = evt.data;
+			if(showLog){
+				end = myDate.getTime()	
+				console.log('get data')			
+				console.log(end)
+			}
+			var obj = JSON.parse(received_msg);
+			if (obj != null){
+				for(var va in obj){
+					data.push({'question': va, 'answer': obj[va]})
+				}
+				var length = data.length < max_entry ? data.length : max_entry;
+				var i;
+				for(i=0; i<length; i++){
+					var id = 'field' + (i+1)
+					document.getElementById(id).value = data[i]['question']
+				}
+				while(i < max_entry){
+					var id = 'field' + (i+1)
+					document.getElementById(id).value = ""
+					i += 1
+				}
+			}
+			current = 0;
+            ws.close()
+        };       
+        ws.onclose = function(){};
+    }
+	
+}
+
+function upload(){
+    var upload_data = {}
+    var selectFiles = document.getElementById("field16").files;
+	for(var file of selectFiles){
+        console.log(file.webkitRelativePath);
+        var reader = new FileReader();
+        reader.readAsText(file);
+		reader.onloadend = function(){
+            // console.log(this.result)
+            var pairs = this.result.split('\r\n')
+            var qa_length = pairs.length
+            console.log(pairs)
+            for(var i=0; i<qa_length; i+=2){
+                upload_data[pairs[i]] = pairs[i+1];
+            }
+        }
+    }
+    console.log(upload_data)
+    if ("WebSocket" in window){
+        var ws = new WebSocket("wss://boshitech.net:8001"); 
+        var response = {}       
+        ws.onopen = function(){
+            console.log(upload_data)
+            response['type'] = "upload-corpus"
+            response['data'] = upload_data
+            ws.send(JSON.stringify(response));
+        };    
+        ws.onmessage = function (evt) { 
+            received_msg = evt.data;
+        };       
+        ws.onclose = function(){};
+    }
+}
+</script>
+</html>
